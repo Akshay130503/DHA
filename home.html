@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0;
+        height: 100vh;
+      }
+
+      .header {
+        width: 100%;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav .center-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-grow: 1;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav a:hover {
+        background-color: #555;
+      }
+
+      .nav .logout {
+        margin-left: auto;
+      }
+
+      .home-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url("/static/WhatsApp\ Image\ 2024-08-19\ at\ 23.59.41_0d61a4ea.jpg"); /* Ensure the path is correct */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        position: relative;
+      }
+
+      .home-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+        z-index: 1;
+      }
+
+      .home-container > * {
+        position: relative;
+        z-index: 2; /* Ensure content is above the overlay */
+      }
+
+      h2 {
+        margin-bottom: 40px;
+        color: #333;
+      }
+
+      .test-box-container {
+        display: flex;
+        gap: 20px;
+      }
+
+      .test-box {
+        width: 5cm;
+        height: 5cm;
+        background-color: #4caf50;
+        color: white;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .test-box:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Diabetes Prediction System</div>
+    <div class="nav">
+      <div class="center-links">
+        <a href="/home">Home</a>
+        <a href="/test-details">Test Details</a>
+        <a href="mailto:akshaykrishna1305@gmail.com">Contact</a>
+      </div>
+      <a href="/logout" class="logout">Logout</a>
+    </div>
+    <div class="home-container">
+      <h2>Welcome to the Diabetes Prediction System</h2>
+      <div class="test-box-container">
+        <div class="test-box" onclick="location.href='/diabetic-form'">
+          Diabetic Test
+        </div>
+        <div class="test-box" onclick="location.href='/retino-form'">
+          Retino Test
+        </div>
+        <div class="test-box" onclick="location.href='/cataract-form'">
+          Cataract Test
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

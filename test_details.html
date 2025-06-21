@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("/static/WhatsApp\ Image\ 2024-08-19\ at\ 23.59.41_0d61a4ea.jpg"); /* Ensure the path is correct */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.55); /* 50% transparency */
+        z-index: 1;
+      }
+
+      .details-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
+
+      p {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="details-container">
+      <h2>Test Details</h2>
+      <p>
+        The Diabetes Prediction System allows you to predict your risk of
+        diabetes based on various health parameters. The tests available are:
+      </p>
+      <ul>
+        <li>Diabetic Test: Predicts diabetes based on blood parameters.</li>
+        <li>Retino Test: Predicts retinal issues associated with diabetes.</li>
+        <li>
+          Cataract Test: Predicts the likelihood of cataracts based on eye
+          images.
+        </li>
+      </ul>
+      <p>
+        Each test requires specific inputs which can be entered through the
+        forms provided. The system uses advanced machine learning algorithms to
+        analyze your data and provide a prediction.
+      </p>
+    </div>
+  </body>
+</html>

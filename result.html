@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("/static/WhatsApp\ Image\ 2024-08-19\ at\ 23.59.41_0d61a4ea.jpg"); /* Ensure the path is correct */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .result-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      p {
+        font-size: 18px;
+        color: #666;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      input {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result-container">
+      <h2>Test Result</h2>
+      <p>{{ result }}</p>
+
+      <form action="{{ url_for('download_report') }}" method="post">
+        <input type="hidden" name="result" value="{{ result }}" />
+        <input
+          type="text"
+          name="patient_name"
+          placeholder="Patient Name"
+          required
+        />
+        <input
+          type="text"
+          name="patient_id"
+          placeholder="Patient ID"
+          required
+        />
+        <input type="number" name="age" placeholder="Age" required />
+        <input type="text" name="gender" placeholder="Gender" required />
+        <button type="submit">Download Report</button>
+      </form>
+
+      <button onclick="location.href='/home'">Back to Home</button>
+    </div>
+  </body>
+</html>

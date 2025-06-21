@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cataract Test Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("/static/WhatsApp\ Image\ 2024-08-19\ at\ 23.59.41_0d61a4ea.jpg"); /* Ensure the path is correct */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+        z-index: 1;
+      }
+
+      .header {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        z-index: 2;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        background-color: #333;
+        padding: 10px 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 67px; /* Adjust this value if needed to align with the header */
+        z-index: 2;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav a:hover {
+        background-color: #555;
+      }
+
+      .form-container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+        margin-top: 120px; /* Adjusted for the nav bar space */
+        position: relative;
+        z-index: 2;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .form-row label {
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .form-row input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Diabetes Prediction System</div>
+    <div class="nav">
+      <a href="/home">Home</a>
+      <a href="/test-details">Test Details</a>
+      <a href="mailto:akshaykrishna1305@gmail.com">Contact</a>
+    </div>
+    <div class="form-container">
+      <h2>Cataract Test Form</h2>
+      <form
+        action="/predict-cataract"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="image">Upload Eye Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required />
+        <button type="submit">Predict</button>
+      </form>
+    </div>
+  </body>
+</html>
